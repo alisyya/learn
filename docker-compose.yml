@@ -33,7 +33,7 @@ services:
       - frontend
       - backend
   db:
-    image: timescale/timescaledb:2.1.0-pg13
+    image: docker.io/timescale/timescaledb:2.1.0-pg13
     volumes:
       - ${DOCKER_DATA_PATH_HOST}/postgres:/var/lib/postgresql/data
     restart: unless-stopped
@@ -44,7 +44,7 @@ services:
     networks:
       - backend
   redis:
-    image: redis
+    image: docker.io/redis
     restart: unless-stopped
     volumes:
       - ${DOCKER_DATA_PATH_HOST}/redis:/data
